@@ -11201,3 +11201,25 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+.service {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.service:last-child {
+  border-bottom: none;
+}
+.price-list {
+  list-style-type: none;
+  padding: 0;
+}
+.price-list li {
+  margin: 5px 0;
+}
+.extra-services {
+  margin-top: 20px;
+}
+.models {
+  margin-top: 20px;
+}
