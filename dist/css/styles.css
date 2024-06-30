@@ -3850,6 +3850,21 @@ nav .navbar-brand {
   color: var(--bs-navbar-brand-hover-color);
 }
 
+.navbar-logo {
+  width: 150px; /* Adjust the width to make the logo smaller */
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+}
+
+.navbar-header {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .navbar-nav {
   --bs-nav-link-padding-x: 0;
   --bs-nav-link-padding-y: 0.5rem;
@@ -3862,6 +3877,7 @@ nav .navbar-brand {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  gap: 20px;
 }
 .navbar-nav .show > .nav-link,
 .navbar-nav .nav-link.active {
