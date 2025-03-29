@@ -1,0 +1,145 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f6f7;
+    color: #a68076;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #f7f2ec;
+    padding: 2rem 1rem; /* Add more padding for better spacing */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text content */
+}
+
+.logo {
+    height: 120px; /* Increase the size of the logo */
+    margin-bottom: 1.5rem; /* Add more spacing below the logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem; /* Increase spacing between navigation items */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d58f99;
+    font-weight: bold;
+    font-size: 1.1rem; /* Slightly increase font size for better readability */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #a68076;
+}
+
+.language-switcher {
+    position: absolute; /* Position the buttons relative to the viewport */
+    top: 1rem; /* Add spacing from the top */
+    right: 1rem; /* Add spacing from the right */
+    display: flex; /* Ensure buttons are aligned horizontally */
+    gap: 0.5rem; /* Add spacing between the buttons */
+}
+
+.language-switcher button {
+    background: none;
+    border: 1px solid #d58f99;
+    color: #d58f99;
+    padding: 0.3rem 0.6rem; /* Reduce padding to make buttons smaller */
+    font-size: 0.9rem; /* Reduce font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-switcher button:hover {
+    background-color: #d58f99;
+    color: #fff;
+}
+
+.section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.product img {
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #efc3e0;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #a68076;
+}
+
+.social-links a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #a68076;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #d58f99;
+}
+
+.video-placeholder video {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+}
+
+button, input, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    color: #d58f99;
+}
+
+p {
+    margin-bottom: 1rem;
+}
