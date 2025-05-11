@@ -71,15 +71,17 @@ nav ul li a:hover {
 }
 
 .section {
-    padding: 2rem;
+    padding: 3rem 2rem; /* Increase padding to add more space */
     text-align: center;
 }
 
 .product-list {
+    margin-top: 2rem; /* Add margin above the product list */
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     gap: 2rem;
-    flex-wrap: wrap;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-bottom: 50rem; /* Add padding to avoid scrollbar overlap */
 }
 
 .product img {
@@ -92,10 +94,22 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+html, body {
+    height: 100%; /* Make the html and body elements fill the viewport height */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Ensure the main content grows to fill the available space */
+body > *:not(footer) {
+    flex: 1; /* Allow the main content to grow and push the footer down */
+}
+
 footer {
     background-color: #efc3e0;
     padding: 1rem;
     text-align: center;
+    color: #a68076;
 }
 
 footer p {
