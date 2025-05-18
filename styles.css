@@ -13,24 +13,40 @@ body {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #f7f2ec;
-    padding: 2rem 1rem; /* Add more padding for better spacing */
+    padding: 0.25rem 0.5rem;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Center text content */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Smaller logo */
 .logo {
-    height: 120px; /* Increase the size of the logo */
-    margin-bottom: 1.5rem; /* Add more spacing below the logo */
+    height: 50px; /* Base size */
+    /* Make it 30% bigger */
+    transform-origin: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Slight spacing between logo and nav */
+nav {
+    margin-top: 0rem;
+    margin-bottom: 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem; /* Increase spacing between navigation items */
+    gap: 1rem;
     padding: 0;
     margin: 0;
 }
@@ -39,7 +55,7 @@ nav ul li a {
     text-decoration: none;
     color: #d58f99;
     font-weight: bold;
-    font-size: 1.1rem; /* Slightly increase font size for better readability */
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
@@ -48,19 +64,20 @@ nav ul li a:hover {
 }
 
 .language-switcher {
-    position: absolute; /* Position the buttons relative to the viewport */
-    top: 1rem; /* Add spacing from the top */
-    right: 1rem; /* Add spacing from the right */
-    display: flex; /* Ensure buttons are aligned horizontally */
-    gap: 0.5rem; /* Add spacing between the buttons */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .language-switcher button {
     background: none;
     border: 1px solid #d58f99;
+    border-radius: 5px;
     color: #d58f99;
-    padding: 0.3rem 0.6rem; /* Reduce padding to make buttons smaller */
-    font-size: 0.9rem; /* Reduce font size */
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -70,18 +87,31 @@ nav ul li a:hover {
     color: #fff;
 }
 
+.bajs {
+    margin-top: 10rem;
+}
+
 .section {
-    padding: 3rem 2rem; /* Increase padding to add more space */
-    text-align: center;
+    padding: 3rem 2rem;
+    text-align: bottom;
+}
+
+.section-list {
+    margin-top: 10rem;
+    display: grid;
+    flex-direction: row;
+    gap: 2rem;
+    overflow-x: auto;
+    padding-bottom: 50rem;
 }
 
 .product-list {
-    margin-top: 2rem; /* Add margin above the product list */
+    margin-top: 10rem;
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    padding-bottom: 50rem; /* Add padding to avoid scrollbar overlap */
+    overflow-x: auto;
+    padding-bottom: 50rem;
 }
 
 .product img {
@@ -95,14 +125,13 @@ nav ul li a:hover {
 }
 
 html, body {
-    height: 100%; /* Make the html and body elements fill the viewport height */
+    height: 100%;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
 }
 
-/* Ensure the main content grows to fill the available space */
 body > *:not(footer) {
-    flex: 1; /* Allow the main content to grow and push the footer down */
+    flex: 1;
 }
 
 footer {
@@ -136,6 +165,7 @@ footer p {
 
 .faq-item {
     margin-bottom: 1.5rem;
+    margin-top: 4rem;
 }
 
 button, input, textarea {
@@ -157,3 +187,12 @@ h1, h2, h3, h4, h5, h6 {
 p {
     margin-bottom: 1rem;
 }
+
+.video-item video {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+
