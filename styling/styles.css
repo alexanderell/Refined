@@ -96,6 +96,18 @@ nav ul li a:hover {
     text-align: center;
 }
 
+.section-about-us{
+    padding: 3rem 10rem;
+    text-align: center;
+}
+
+.about-us-section h1{
+    font-size: 3rem;
+    margin-top: 7rem;
+    margin-bottom: 3.5rem;
+    color: #d58f99;
+}
+
 .section-list {
     margin-top: 10rem;
     display: grid;
