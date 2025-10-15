@@ -49,6 +49,8 @@ nav ul {
     gap: 1rem;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap; /* allow wrapping on small screens */
+    justify-content: center;
 }
 
 nav ul li a {
@@ -69,6 +71,23 @@ nav ul li a:hover {
     right: 1rem;
     display: flex;
     gap: 0.5rem;
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    padding: 0.4rem;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #d58f99;
 }
 
 .language-switcher button {
@@ -111,10 +130,9 @@ nav ul li a:hover {
 .section-list {
     margin-top: 10rem;
     display: grid;
-    flex-direction: row;
     gap: 2rem;
     overflow-x: auto;
-    padding-bottom: 50rem;
+    padding-bottom: 2rem;
 }
 
 .product-list {
@@ -123,11 +141,12 @@ nav ul li a:hover {
     flex-direction: row;
     gap: 2rem;
     overflow-x: auto;
-    padding-bottom: 50rem;
+    padding-bottom: 2rem;
 }
 
 .product img {
-    width: 200px;
+    max-width: 200px;
+    width: 100%;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
@@ -169,6 +188,33 @@ footer p {
     color: #d58f99;
 }
 
+/* Ensure social links stay in one row and are vertically centered on small screens */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: nowrap; /* prevent wrapping into multiple lines */
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap; /* keep icon + text on one line */
+}
+
+@media (max-width: 420px) {
+    /* On very narrow screens, slightly reduce spacing and icon sizes to fit */
+    .social-links {
+        gap: 0.4rem;
+    }
+    .social-links img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
 .video-placeholder video {
     width: 80%;
     max-width: 600px;
@@ -208,7 +254,7 @@ p {
 
 .hero {
   background-image: url('../images/hello.png');
-  padding-top: 15rem;
+    padding-top: 10rem; /* reduced from 15rem to avoid pushing content too far down */
   padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
@@ -267,6 +313,110 @@ p {
   z-index: 1;
   position: relative;
   margin-bottom: 10rem;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+    header {
+        padding: 0.4rem 0.6rem;
+    }
+
+    .logo {
+        height: 40px;
+        margin-top: 6px;
+        margin-bottom: 8px;
+    }
+
+    nav ul {
+            flex-direction: column;
+            gap: 0.5rem;
+            display: none; /* hide by default on small screens; JS will toggle */
+    }
+
+    .language-switcher {
+        position: static;
+        margin-top: 0.5rem;
+        justify-self: center;
+    }
+
+        /* Hide desktop language buttons on mobile by default; we'll show them inside the opened nav */
+        .language-switcher button {
+            display: none;
+        }
+
+        /* hide the select now that we prefer buttons inside the menu */
+        .language-switcher select#lang-select {
+            display: none;
+        }
+
+        /* When the mobile nav is opened, reveal the language buttons inside the menu */
+        nav.open .language-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            margin-top: 0.75rem;
+        }
+
+        nav.open .language-switcher button {
+            display: inline-block;
+            border: 1px solid #d58f99;
+            background: transparent;
+            color: #d58f99;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .hamburger {
+            display: flex;
+            position: absolute;
+            top: 0.75rem;
+            left: 1rem;
+            z-index: 1100;
+        }
+
+        /* When nav is open, show it */
+        nav.open ul {
+            display: flex;
+        }
+
+    .section-about-us{
+        padding: 2rem;
+    }
+
+    .hero {
+        padding-top: 6rem; /* reduce big top spacing on phones */
+        padding-bottom: 3rem;
+    }
+
+    .hero h1, .hero p {
+        position: relative;
+        z-index: 1; /* ensure text sits above overlay */
+    }
+
+    .hero h1{
+        font-size: 2rem;
+        margin-top: 0.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        margin-bottom: 1.5rem;
+    }
+
+    .section-list, .product-list {
+        padding-bottom: 2rem;
+        gap: 1rem;
+    }
+
+    .video-placeholder video, .video-item video {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
 
