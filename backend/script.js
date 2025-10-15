@@ -50,3 +50,36 @@ function switchLanguage(lang) {
         }
     });
 }
+
+// Hamburger menu toggle for small screens
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (hamburger && nav && navMenu) {
+        hamburger.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            // keep focus on first link when opening; prefer language buttons if visible
+            if (isOpen) {
+                const firstLangBtn = nav.querySelector('.language-switcher button');
+                if (firstLangBtn) {
+                    firstLangBtn.focus();
+                } else {
+                    const firstLink = navMenu.querySelector('a');
+                    if (firstLink) firstLink.focus();
+                }
+            }
+        });
+    }
+
+    // Mobile language select control
+    const langSelect = document.getElementById('lang-select');
+    if (langSelect) {
+        // show select only if CSS makes it visible; keep listener always
+        langSelect.addEventListener('change', (e) => {
+            switchLanguage(e.target.value);
+        });
+    }
+});
