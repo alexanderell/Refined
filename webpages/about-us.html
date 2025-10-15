@@ -10,9 +10,15 @@
 
 <body>
     <header>
-        <a href="index.html"><img src="../images/IMG_7681.png" alt="Rosé Ateljé Logo" class="logo"></a>
         <nav>
-            <ul>
+            <a href="index.html"><img src="../images/IMG_7681.png" alt="Rosé Ateljé Logo" class="logo"></a>
+            <!-- Hamburger for small screens -->
+            <button class="hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-menu">
                 <li><a data-lang="home" href="index.html">Home</a></li>
                 <li><a data-lang="products" href="products.html">Products</a></li>
                 <li><a data-lang="aboutUs" href="about-us.html">About Us</a></li>
@@ -22,6 +28,10 @@
             <div class="language-switcher">
                 <button id="lang-sv">Svenska</button>
                 <button id="lang-en">English</button>
+                <select id="lang-select" aria-label="Select language" style="display:none;">
+                    <option value="en">English</option>
+                    <option value="sv">Svenska</option>
+                </select>
             </div>
         </nav>
     </header>
